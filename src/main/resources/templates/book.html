@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        table {
+            border: 1px solid black;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        table thead th {
+            border: 1px solid black;
+        }
+        table tbody td {
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>欢迎</h1>
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+        <th>序号</th>
+        <th>序号</th>
+        <th>图书id</th>
+        <th>图书名称</th>
+        <th>图书作者</th>
+        <th>出版社</th>
+        </thead>
+        <tbody>
+        <tr th:each="book,stat:${list}" th:style="'background-color:'+@{${stat.odd}?'#F2F2F2'}">
+            <td th:text="${stat.index}"></td>
+            <td th:text="${stat.count}"></td>
+            <td th:text="${book.id}"></td>
+            <td th:text="${book['name']}"></td>
+            <td th:text="${book.author}"></td>
+            <td th:text="${book['publish']}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

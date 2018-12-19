@@ -1,0 +1,15 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    name: test
+    url: jdbc:mysql://localhost:3306/library?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+  thymeleaf:
+    prefix: classpath:/templates/
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.southwind.entity
